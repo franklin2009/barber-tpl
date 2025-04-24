@@ -1,0 +1,179 @@
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #8B7355;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2C1810;
+}
+
+/* Smooth Scroll Behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Carousel Transitions */
+.carousel-slide {
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.carousel-slide:not(.hidden) {
+    opacity: 1;
+    position: relative;
+}
+
+/* Carousel Controls */
+.carousel-prev,
+.carousel-next {
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Carousel Indicators */
+.carousel-indicator {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.carousel-indicator:hover {
+    transform: scale(1.2);
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+.animate-slide-in {
+    animation: slideInFromBottom 0.8s ease-out;
+}
+
+/* Service Card Hover Effect */
+.service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Team Member Card Hover Effect */
+.team-member {
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: scale(1.02);
+}
+
+/* Custom Background Overlay */
+.bg-overlay {
+    position: relative;
+}
+
+.bg-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(44, 24, 16, 0.8), rgba(44, 24, 16, 0.4));
+    z-index: 1;
+}
+
+/* Mobile Menu Animation */
+#mobile-menu {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#mobile-menu.hidden {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+}
+
+#mobile-menu:not(.hidden) {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Testimonial Card Style */
+.testimonial-card {
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Price Card Hover Effect */
+.price-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.price-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom Button Hover Effect */
+.custom-button {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.custom-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease-out;
+}
+
+.custom-button:hover::after {
+    transform: translateX(100%);
+} 
